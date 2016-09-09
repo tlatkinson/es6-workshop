@@ -2,38 +2,40 @@ import {expect} from 'chai'
 
 describe('MAPS', () => {
 
-  it.skip('has a set method', ()=> {
+	it.skip('has a set method', ()=> {
 
-    // Create a new map called 'myMap'
-    // add a new entry. Use 'name' as the key and 'Aaron' as the value
+		// Create a new map called 'myMap'
+		// add a new entry. Use 'name' as the key and 'Aaron' as the value
 
+		expect(myMap.get('name')).to.equal('Aaron');
+		expect(myMap.has('name')).to.equal(true);
 
-    expect(myMap.get('name')).to.equal('Aaron')
+	});
 
-  })
+	it.skip(`doesn't coerce keys`, ()=> {
 
-  it.skip('can use objects as a key', ()=> {
+		let myMap = new Map();
+		myMap.set(1, 'Aaron');
+		expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/);
+		myMap.set('1', 'Aaron');
+		expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/);
 
-    let user = {name: 'Aaron'}
-    let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
+	});
 
-    // Create a map called 'myMap'
-    // add a new entry. Use user as the key, and value as the value
+	it.skip(`has an entry set`, ()=> {
 
+		var myMap = new Map();
+		myMap.set("0", "foo");
+		myMap.set(1, "bar");
+		myMap.set({}, "baz");
 
-    expect(myMap.has(user)).to.be.true
-    expect(myMap.get(user)).to.equal(value)
+		var mapIter = myMap.entries();
 
-  })
+		Array.from(myMap.entries()).forEach(entry => console.log(entry.value));
 
-  it.skip(`doesn't coerce keys`, ()=> {
+		console.log(mapIter.next().value); // ["0", "foo"]
+		console.log(mapIter.next().value); // [1, "bar"]
+		console.log(mapIter.next().value); // [Object, "baz"]
+	});
 
-    let myMap = new Map()
-    myMap.set(1, 'Aaron')
-    expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/)
-    myMap.set('1', 'Aaron')
-    expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/)
-
-  })
-
-})
+});
