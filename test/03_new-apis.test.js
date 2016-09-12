@@ -21,8 +21,20 @@ describe(`Array`, () => {
 	it.skip(`can find an index and data point`, () => {
 		var arr = ['a', 'b', 'c'];
 
-		expect(1).to.equal(arr.findIndex());
-		expect('b').to.equal(arr.find());
+		expect().to.equal(1); //takes a function
+
+		let people = [
+			{
+				name: 'spongebob',
+				hobby: 'bubble blower'
+			},
+			{
+				name: 'squidward',
+				hobby: 'being depressed'
+			}
+		];
+
+		expect().to.equal(people[0]);
 	});
 });
 

@@ -19,6 +19,7 @@ describe(`Spread`, () => {
 	it.skip(`should be easier to concatenate arrays`, () => {
 		const array1 = [1, 2, 3];
 		// create a result array that uses the spread operator to concatenate array1 with [4, 5, 6]
+
 		expect(result).to.deep.equal([1, 2, 3, 4, 5, 6]);
 	});
 

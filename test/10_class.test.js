@@ -23,7 +23,7 @@ describe('Classes', () => {
 
 		expect(animal.sayName).to.exist;
 		expect(Animal.sayName).to.be.undefined;
-		expect(animal.sayName()).to.equal('My name is: Heisenberg');
+		expect(animal.sayName()).to.equal('Heisenberg');
 	});
 
 

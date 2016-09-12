@@ -29,7 +29,6 @@ describe('Template Literals', () => {
 
 	it.skip(`should support string escaping`, () => {
 		// properly escape a string in a template literal for each of these
-		expect(``).to.equal('Hi\nthere!');
 		expect(``).to.equal('This is `escaped` backtics');
 	});
 
